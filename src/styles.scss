@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+/*!------------------------------------------------------------------
+[MAIN STYLESHEET]
+
+PROJECT:	Fusion tree
+VERSION:	1_0
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+[TABLE OF CONTENTS]
+-------------------------------------------------------------------*/
+
+@import './assets/styles/variables';
+
+@import './assets/styles/mixins';
+
+@import './assets/styles/typography';
+
+@import './assets/styles/buttons';
+
+@import './assets/styles/common';
+
+@import './assets/styles/templates/navigation';
+
+@import './assets/styles/templates/hero-area';
+
+@import './assets/styles/templates/homepage';
+
+@import './assets/styles/templates/about';
+
+@import './assets/styles/templates/contact';

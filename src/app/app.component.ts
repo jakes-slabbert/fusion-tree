@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'fusion-tree-public';
+
+  isScrolled = false;
+
+  constructor() {}
+
+  @HostListener("window:scroll")
+  scrollEvent() {
+    window.pageYOffset >= 80 ? (this.isScrolled = true) : (this.isScrolled = false);
+  }
+
+  title = 'fusion-tree';
+
+  public scrollToElement($element: any): void {
+    console.log($element);
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
 }
