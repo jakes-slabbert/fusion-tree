@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build-gh": "ng build --prod --base-href=https://jakes-slabbert.github.io/fusion-tree/",
+    "deploy-gh": "angular-cli-ghpages -d dist/fusion-tree-public/ --no-silent --repo=https://github.com/jakes-slabbert/fusion-tree.git"
   },
   "private": true,
   "dependencies": {
