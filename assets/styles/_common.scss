@@ -5,6 +5,8 @@ body {
   direction: ltr;
   scrollbar-color: rgb(77, 189, 90) #000;
   scrollbar-width: thin;
+  width: 100vw;
+  height: 100vh;
 }
 
 body::-webkit-scrollbar {
@@ -23,9 +25,15 @@ body::-webkit-scrollbar-thumb {
 }
 
 @media screen and (max-width: 768px){
-  ::-webkit-scrollbar {
-      -webkit-appearance: none;
+  body {
+    width: 105vw;
   }
+}
+
+@media screen and (max-width: 768px){
+  // ::-webkit-scrollbar {
+  //     -webkit-appearance: none;
+  // }
 
   body {
     overflow-x: hidden;
