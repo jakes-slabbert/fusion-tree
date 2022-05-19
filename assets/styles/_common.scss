@@ -30,6 +30,10 @@ body::-webkit-scrollbar-thumb {
   body {
     overflow-x: hidden;
   }
+
+  .fixed-top {
+    position: absolute;
+  }
 }
 
 ::selection {
