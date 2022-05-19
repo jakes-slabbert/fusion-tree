@@ -8,12 +8,11 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 20px;
+  width: 15px;
 }
 
 body::-webkit-scrollbar-track {
   background-color: transparent;
-  // border-radius: 100px;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -26,6 +25,10 @@ body::-webkit-scrollbar-thumb {
 @media screen and (max-width: 768px){
   ::-webkit-scrollbar {
       -webkit-appearance: none;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 }
 
