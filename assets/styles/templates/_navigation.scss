@@ -3,17 +3,21 @@
 }
 
 .navigation {
-  transition: .3s ease;
+  transition: .4s ease;
 }
 
 .navbar {
   max-height: 125px;
-  transition: .3s ease;
+  transition: .4s ease;
   &-collapse{
     @include desktop {
       padding-bottom: 20px;
     }
   }
+}
+
+.navbar {
+  padding: 10% 0 0 0 !important;
 }
 
 @media screen and (min-width: 768px){
