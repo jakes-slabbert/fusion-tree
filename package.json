@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build-gh": "ng build --prod --base-href=https://jakes-slabbert.github.io/fusion-tree/",
+    "build-gh": "ng build --base-href=https://www.fusiontree.co.za",
     "deploy-gh": "ngh --no-silent -d dist/fusion-tree/ --repo=https://github.com/jakes-slabbert/fusion-tree.git"
   },
   "private": true,

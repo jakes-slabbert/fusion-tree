@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,17 +10,16 @@ export class AppComponent {
 
   isScrolled = false;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   @HostListener("window:scroll")
   scrollEvent() {
-    window.pageYOffset >= 80 ? (this.isScrolled = true) : (this.isScrolled = false);
+    window.scrollY >= 80 ? (this.isScrolled = true) : (this.isScrolled = false);
   }
 
   title = 'fusion-tree';
 
   public scrollToElement($element: any): void {
-    console.log($element);
     $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 }
