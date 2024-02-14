@@ -24,6 +24,11 @@ body::-webkit-scrollbar-thumb {
   background-image: linear-gradient(rgb(77, 189, 90), #000);
 }
 
+@media screen and (max-width: 768px){
+  body {
+    width: 105vw;
+  }
+}
 
 @media screen and (max-width: 768px){
   // ::-webkit-scrollbar {
