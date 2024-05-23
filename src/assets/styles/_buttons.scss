@@ -21,16 +21,16 @@
 }
 
 .btn-primary {
-  background-image: $primary-gradient;
+  background: #17ffd3;
   color: $text-color-dark;
   transition: background 1s ease-out;
 
   &:active {
-    background: $primary-gradient !important;
+    background: #17ffd3 !important;
   }
 
   &:hover {
-    background: $primary-gradient-alt;
+    background: #13caa9;
     color: $text-color-dark;
   }
 }
