@@ -68,4 +68,15 @@
       easing: 'easeInOutExpo'
     })
   }
+
+  // JavaScript solution
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('.site-header');
+    console.log(this.window.scrollY);
+    if (window.scrollY > 0) {
+        header.style.backgroundColor = '#0080FF'; // Set to your desired color
+    } else {
+        header.style.backgroundColor = 'transparent'; // Revert to transparent when back at top
+    }
+  });
 }())
