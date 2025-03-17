@@ -72,6 +72,25 @@
             opacity: 1;
             color: #fff;
         }
+		.floating-image {
+			position: fixed;
+			bottom: -135px;  /* Distance from bottom */
+			right: 195px;   /* Distance from right */
+			z-index: 9999; /* Ensure it stays on top */
+			height: 4.5rem;
+		}
+
+		.floating-image img {
+			max-width: 150px; /* Adjust size as needed */
+			height: auto;
+		}
+
+		/* Optional: Make it smaller on mobile */
+		@media (max-width: 768px) {
+			.floating-image img {
+				max-width: 100px;
+			}
+		}
     </style>
 <script type="text/javascript" async="" src="https://scripts.swipepages.com/js/vendor/jquery-ui.min.js"></script></head>
 <script src="https://www.google.com/recaptcha/api.js?render=6LdRi_cqAAAAAHnRIrTwZ21Jz5PMd--lBpehCgKO"></script>
@@ -114,13 +133,12 @@
 		</div></div><div class="tatsu-module tatsu-button-wrap  circular tatsu-KrzHqeBIQ tatsu-last-child none">
 	<div class="tatsu-button-wrap-inner">
 		
-        <a class="tatsu-shortcode tatsu-button x-largebtn bg-animation-none left-icon  " href="mailto:">
-            <div>
-                        <span class="tatsu-button-text " data-text="Book A Free Consultation">
-                            <span class="default">Book A Free Consultation</span>
-                       </span>
-                       
-                       </div>
+        <a id="bookConsultationBtn" class="tatsu-shortcode tatsu-button x-largebtn bg-animation-none left-icon" href="#">
+			<div>
+				<span class="tatsu-button-text" data-text="Book A Free Consultation">
+					<span class="default">Book A Free Consultation</span>
+				</span>
+			</div>
 		</a>
 		
 	</div>
@@ -146,8 +164,8 @@
 		<img data-srcset="https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/mediamodifier-design--5--uptmve.svg 150w,https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/mediamodifier-design--5--uptmve.svg 300w,https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/mediamodifier-design--5--uptmve.svg 500w,https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/mediamodifier-design--5--uptmve.svg 750w,https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/mediamodifier-design--5--uptmve.svg 800w" sizes="(max-width: 767px) 100vw,(max-width: 1024px) 143.05vw,(max-width: 1377px) 796.5024000000001px, 796.5024000000001px" alt="" data-src="https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/mediamodifier-design--5--uptmve.svg" data-webp="0" srcset="https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/mediamodifier-design--5--uptmve.svg 150w,https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/mediamodifier-design--5--uptmve.svg 300w,https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/mediamodifier-design--5--uptmve.svg 500w,https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/mediamodifier-design--5--uptmve.svg 750w,https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/mediamodifier-design--5--uptmve.svg 800w" src="https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/mediamodifier-design--5--uptmve.svg" style="opacity: 1;">
 	</div>
 </div><div class="tatsu-single-image tatsu-module tatsu-AmdLCGVSW tatsu-last-child align-right tatsu-image-lazyload  tatsu-AmdLCGVSW  ">
-	<div class="tatsu-single-image-inner" style="background-color: rgba(0, 0, 0, 0);">
-	<div class="tatsu-single-image-padding-wrap bottom-right"></div>
+	<div class="tatsu-single-image-inner floating-image" style="background-color: rgba(0, 0, 0, 0);">
+	<!-- <div class="tatsu-single-image-padding-wrap bottom-right"></div> -->
 		<img data-srcset="https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/5-stars-v2-150.webp 150w,https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/5-stars-v2-300.webp 300w,https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/5-stars-v2.png 383w" sizes="(max-width: 767px) 40vw,(max-width: 1024px) 40vw,(max-width: 1377px) 222.72px, 222.72px" alt="" data-src="https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/5-stars-v2.png" data-extension=".png" data-webp="1" srcset="https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/5-stars-v2-150.webp 150w,https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/5-stars-v2-300.webp 300w,https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/5-stars-v2.webp 383w" src="https://media.swipepages.com/2025/3/67c9fca20adbc8001136066c/5-stars-v2.webp" style="opacity: 1;">
 	</div>
 </div>
@@ -2639,6 +2657,16 @@
 			item.addEventListener("click", function () {
 				selectedCountryCode = this.getAttribute("value");
 				console.log("Selected Country Code:", selectedCountryCode);
+			});
+		});
+		
+		document.getElementById("bookConsultationBtn").addEventListener("click", function(event) {
+			event.preventDefault(); // Prevent the default action
+
+			// Scroll smoothly to the form
+			document.getElementById("sp-form-w6cN4VQYOa").scrollIntoView({
+				behavior: "smooth",
+				block: "start"
 			});
 		});
 		
