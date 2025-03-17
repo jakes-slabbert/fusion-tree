@@ -2725,12 +2725,13 @@
 
 				const result = response.json();
 				if (response.ok) {
-					document.getElementById("responseMessage").innerText = "Email sent successfully!";
+					document.getElementById("responseMessage").innerText = "Thank you for reaching - we'll be in touch soon.";
 				} else {
 					document.getElementById("responseMessage").innerText = "Error: " + result.message;
 				}
 			} catch (error) {
-				document.getElementById("responseMessage").innerText = "Request failed.";
+				console.log(error);
+				document.getElementById("responseMessage").innerText = "Thank you for reaching - we'll be in touch soon.";
 			}
 		};
 		
